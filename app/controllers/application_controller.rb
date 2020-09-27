@@ -42,5 +42,6 @@ patch '/recipes/:id' do
     ingredients: params[:ingredients],
     cook_time: prams[:cook_time])
     redirect "/recipes/#{recipe.id}"
+  end
 end
 end
