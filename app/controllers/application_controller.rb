@@ -44,4 +44,8 @@ patch '/recipes/:id' do
     redirect "/recipes/#{recipe.id}"
   end
 end
+delete '/recipes/:id/delete' do
+  Recipe.find(params[:id]).destroy
+  redirect '/recipes'
+end
 end
