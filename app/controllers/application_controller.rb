@@ -22,13 +22,13 @@ post '/recipes' do
  name: params[:name],
  ingredients: params[:ingredients],
  cook_time: prams[:cook_time]
- ).tap do |recipe| 
+ ).tap do |recipe|
    recipe.save
    redirect "/recipes/#{recipe.id}"
  end
 end
 get '/recipes/:id' do
   @recipe = Recipe.find(params[:id])
-  erb :show 
+  erb :show
 end
 end
