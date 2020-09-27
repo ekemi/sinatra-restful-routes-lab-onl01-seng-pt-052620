@@ -35,4 +35,12 @@ get '/recipes/:id/edit' do
     @recipe = Recipe.find(params[:id])
     erb :edit
 end
+patch '/recipes/:id' do
+    Recipe.find(params[:id]).tap do |recipe|
+      recipe.update(
+      name: params[:name],
+    ingredients: params[:ingredients],
+    cook_time: prams[:cook_time])
+    redirect "/recipes/#{recipe.id}"
+end
 end
